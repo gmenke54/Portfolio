@@ -7,10 +7,10 @@
             This full CRUD borwser-based application was built by:
           </div>
           <div class="flex-col">
-                        <a class="linked-in-link" href="https://github.com/gmenke54">GitHub</a>
+            <a class="linked-in-link" href="https://github.com/gmenke54">GitHub</a>
             <div class="nut">
-            <img  @mouseover="this.show=true" @mouseleave="this.show=false" src="https://media-exp1.licdn.com/dms/image/C5603AQGmr5tzUwS9Kg/profile-displayphoto-shrink_800_800/0/1638995274513?e=1650499200&v=beta&t=DMG-0GKAop8i0H9rWH7e6fhIeDw1G2sZ2GT2XFbwUeo" @click="golinkedin" alt="profile image">
-              <div v-if="show" class="name">Grant Menke</div>
+            <img class="profile-image" @mouseover="this.show=true" @mouseleave="this.show=false" src="https://media-exp1.licdn.com/dms/image/C5603AQGmr5tzUwS9Kg/profile-displayphoto-shrink_800_800/0/1638995274513?e=1650499200&v=beta&t=DMG-0GKAop8i0H9rWH7e6fhIeDw1G2sZ2GT2XFbwUeo" @click="golinkedin" alt="profile image">
+              <div v-if="show" class="about-name">Grant Menke</div>
             </div>
             <a class="linked-in-link" href="http://grantmenke.com/">Portfolio</a>
           </div>
@@ -92,7 +92,7 @@ export default {
   display: flex;
   justify-content: center;
 }
-.name{
+.about-name{
   color: white;
   position: absolute;
   top: 43.5%;
@@ -176,7 +176,7 @@ a{
 
 img{
   border-radius: 50%;
-  height: 18vw;
+  width: 18vw;
   cursor: pointer;
   /* border: 3px solid #3181CE; */
 }

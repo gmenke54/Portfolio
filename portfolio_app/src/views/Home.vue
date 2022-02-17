@@ -2,12 +2,13 @@
   <div class="home">
     <div class="img-cont">
       <img alt="Profile Picture" class="prof" src="../assets/headshot.png">
-      <div class="name">Grant Menke</div>
-
+      <div class="word-cont">
+        <div class="name">Grant Menke</div>
+        <div class="title">Full Stack React/Node Developer</div>
+      </div>
 
     </div>
-
-  <Carousel :autoplay="3000" :itemsToShow="3.95" :wrapAround="true">
+  <Carousel class="carousel" :autoplay="3000" :itemsToShow="3.95" :wrapAround="true">
     <Slide v-for="image in this.images" :key="image.id">
       <div class="carousel__item">
       <img :src="image.url" />
@@ -30,6 +31,8 @@ import monopoly from '../assets/monopoly.png'
 import profile from '../assets/profile.png'
 import search from '../assets/search.png'
 import trade from '../assets/trade.png'
+import instruct from '../assets/instruct.png'
+import card from '../assets/card.png'
 
 export default {
   name: 'Home',
@@ -47,16 +50,29 @@ export default {
       { id: 4, url: search },
       { id: 5, url: trade },
       { id: 6, url: monopoly },
+    ],
+    projects: [
+      {id: 1, github: "https://github.com/gmenke54/My_Keto_Pal_Front_End", deployed: "https://myketopal.surge.sh/" , images: [dash, feed, profile] },
+      {id: 2, github: "https://github.com/gmenke54/u2_project_FBB_Trade_Analyzer", deployed: "https://glacial-brook-94586.herokuapp.com/" , images: [trade, search] },
+      {id: 3, github: "https://github.com/gmenke54/u1_project_monopoly", deployed: "https://grantopoly.surge.sh/" , images: [monopoly, instruct, card] }
     ]
   })
 }
 </script>
 
 <style>
+.home{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.carousel{
+  width: 91vw;
+  margin-top: 10px;
+}
 img{
   border-radius: 5px;
   width: 45vw;
-  min-width: 350px;;
 }
 .carousel__slide > .carousel__item {
   transform: scale(1);
@@ -94,7 +110,7 @@ img{
     --vc-clr-secondary: rgb(152, 170, 218);
 }
 .prof{
-  width: 18em;
+  width: 17em;
   border-radius: 50% 30% 0 50%
 }
 .img-cont{
@@ -105,13 +121,20 @@ img{
 }
 .name{
   color: rgb(59, 59, 59);
-  margin-left: -100px;
-  margin-bottom: 20px;
-  /* position: absolute; */
   top: 43.5%;
-  left: 10%;
-  text-align: center;
   font-weight: 700;
-  font-size: 5vw
+  font-size: 75px;
+}
+.word-cont{
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -70px;
+}
+.title{
+  margin-top: -20px;
+  color: rgb(59, 59, 59);
+  font-size: 20px;
 }
 </style>
