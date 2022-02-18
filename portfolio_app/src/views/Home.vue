@@ -4,7 +4,8 @@
       <img alt="Profile Picture" class="prof" src="../assets/headshot.png">
       <div class="word-cont">
         <div class="name">Grant Menke</div>
-        <div class="title">Full Stack React/Node Developer</div>
+        <div class="title">Full Stack Software Engineer</div>
+        <!-- <div class="title">Full Stack React/Node Developer</div> -->
       </div>
 
     </div>
@@ -19,6 +20,18 @@
       <pagination />
     </template>
   </Carousel>
+  <div class="brand">Full-stack software engineer with roots in STEM education and Medicine, I love to learn, think logistically, and am always building. My methodical thought process and craftsmanship allow me to plan and develop efficient, scaleable, and traceable back-end systems. </div>
+  <div>My Skills</div>
+  <div class="techs-cont">
+    <div  v-for="tech in techs" :key="tech.id">
+      <TechCard :tech="tech" />
+    </div>
+  </div>
+
+  <div>My Builds</div>
+  <div  v-for="project in projects" :key="project.id">
+    <ProjectCard :project="project" />
+  </div>
   </div>
 </template>
 
@@ -33,6 +46,26 @@ import search from '../assets/search.png'
 import trade from '../assets/trade.png'
 import instruct from '../assets/instruct.png'
 import card from '../assets/card.png'
+import TechCard from '../components/TechCard.vue'
+import ProjectCard from '../components/ProjectCard.vue'
+import js from '../assets/techs/javascript.png'
+import react from '../assets/techs/react.png'
+import node from '../assets/techs/node.png'
+import python from '../assets/techs/python.png'
+import css from '../assets/techs/css.png'
+import django from '../assets/techs/django.png'
+import express from '../assets/techs/express.png'
+import git from '../assets/techs/git.png'
+import github from '../assets/techs/github.png'
+import html from '../assets/techs/html.png'
+import mongodb from '../assets/techs/mongodb.png'
+import mongoose from '../assets/techs/mongoose.png'
+import postgresql from '../assets/techs/postgresql.png'
+import redux from '../assets/techs/redux.png'
+import sequelize from '../assets/techs/sequelize.png'
+import vue from '../assets/techs/vue.png'
+import vuex from '../assets/techs/vuex.png'
+import chart from '../assets/techs/chart.png'
 
 export default {
   name: 'Home',
@@ -41,9 +74,31 @@ export default {
     Slide,
     Pagination,
     Navigation,
+    TechCard,
+    ProjectCard
   },
   data:() => ({
-      images: [
+    techs: [
+      { id: 1, name: "JavaScript", url: js },
+      { id: 2, name: "Python", url: python },
+      { id: 3, name: "Node.js", url: node },
+      { id: 4, name: "Express.js", url: express },
+      { id: 5, name: "React", url: react },
+      { id: 6, name: "Vue.js", url: vue },
+      { id: 7, name: "Django", url: django },
+      { id: 8, name: "PostgreSQL", url: postgresql },
+      { id: 9, name: "Sequelize", url: sequelize },
+      { id: 10, name: "Mongoose", url: mongoose },
+      { id: 11, name: "MongoDB", url: mongodb },
+      { id: 12, name: "Redux", url: redux },
+      { id: 13, name: "Vuex", url: vuex },
+      { id: 14, name: "Chart.js", url: chart },
+      { id: 15, name: "Git", url: git },
+      { id: 16, name: "GitHub", url: github },
+      { id: 17, name: "HTML5", url: html },
+      { id: 18, name: "CSS3", url: css },
+    ],
+    images: [
       { id: 1, url: dash },
       { id: 2, url: feed },
       { id: 3, url: profile },
@@ -52,15 +107,42 @@ export default {
       { id: 6, url: monopoly },
     ],
     projects: [
-      {id: 1, github: "https://github.com/gmenke54/My_Keto_Pal_Front_End", deployed: "https://myketopal.surge.sh/" , images: [dash, feed, profile] },
-      {id: 2, github: "https://github.com/gmenke54/u2_project_FBB_Trade_Analyzer", deployed: "https://glacial-brook-94586.herokuapp.com/" , images: [trade, search] },
-      {id: 3, github: "https://github.com/gmenke54/u1_project_monopoly", deployed: "https://grantopoly.surge.sh/" , images: [monopoly, instruct, card] }
+      {
+      id: 1, 
+      github: "https://github.com/gmenke54/My_Keto_Pal_Front_End", 
+      deployed: "https://myketopal.surge.sh/", 
+      images: [dash, feed, profile],
+      name: "MyKetoPal Nutrient Tracking Platform",
+      description: "Utilized PostgreSQL, Python, Django, and Vue.js to build a full stack mobile optimized application that tracks user nutrient consumption."
+      },
+      {
+      id: 2,
+      github: "https://github.com/gmenke54/u2_project_FBB_Trade_Analyzer",
+      deployed: "https://glacial-brook-94586.herokuapp.com/",
+      images: [trade, search],
+      name: "NBA Fantasy Basketball Trade Analyzer",
+      description: "Utilized MERN stack (MongoDB, Express, React, Node.js) to build a full stack application that efficiently tracks and analyzes live NBA stats."
+      },
+      {
+      id: 3,
+      github: "https://github.com/gmenke54/u1_project_monopoly",
+      deployed: "https://grantopoly.surge.sh/",
+      images: [monopoly, instruct, card],
+      name: "Monopoly Game Clone",
+      description: "Browser-based Monopoly clone written in vanilla JavaScript, which I built two weeks after writing my first ever line of code."
+      }
     ]
   })
 }
 </script>
 
 <style>
+.techs-cont{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
 .home{
   display: flex;
   flex-direction: column;
