@@ -21,9 +21,9 @@
         <div class="links">
           <a
             class="linked-in"
-            href="https://vcalendar.io/"
+            href="https://www.npmjs.com/package/vue-flip"
           >
-            V-Calendar Date Plugin
+            Vue-Flip Library
           </a>
           <a class="linked-in" href="https://www.canva.com/">
             Canva

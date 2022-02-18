@@ -1,24 +1,16 @@
 <template>
   <div class="cont">
     <div class="line"></div>
-    <!-- <div class="flex-row">
-      <div class="picture-cont">
-        <img :src="project.images[0]" alt="Project Image">
-      </div>
-      <div class="bullets-cont">
-        <div class="project-name">{{project.name}}</div>
-        <div class="project-description">{{project.description}}</div>
-        <div v-for="bullet in project.bullets" :key="bullet.index">-{{bullet}}</div>
-      </div>
-    </div> -->
     <vue-flip active-click width="45vw" height="30vw" >
       <template v-slot:front class="picture-cont">
         <img :src="project.images[0]" alt="Project Image">
       </template>
-      <template v-slot:back class="bullets-cont">
-        <div class="project-name">{{project.name}}</div>
-        <div class="project-description">{{project.description}}</div>
-        <div v-for="bullet in project.bullets" :key="bullet.index">-{{bullet}}</div>
+      <template v-slot:back>
+        <div class="bullets-cont">
+          <div class="project-name">{{project.name}}</div>
+          <div class="project-description">{{project.description}}</div>
+          <div v-for="bullet in project.bullets" :key="bullet.index">-{{bullet}}</div>
+        </div>
       </template>
     </vue-flip>
   </div>
@@ -61,27 +53,17 @@ export default {
 .flip-container:hover{
   transform: scale(1.04);
 }
+.back{
+  margin: auto 0;
+  height: 30vw;
+}
 .bullets-cont{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 30vw;
-}
-/* .flipper{
-  display: flex;
-  justify-content: center;
-} */
-/* .bullets-cont{
-  width: 50vw;
-}
-.picture-cont{
-  width: 50vw;
-} */
-.cont{
-  /* height: 40vw; */
-  /* display: flex; */
-  /* justify-content: center; */
+  width: 100%;
+  height: 100%
 }
 
 </style>
