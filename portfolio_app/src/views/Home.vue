@@ -132,7 +132,7 @@ export default {
       images: [monopoly, instruct, card],
       name: "Monopoly Game Clone",
       description: "Browser-based Monopoly clone written in vanilla JavaScript, which I built two weeks after writing my first ever line of code.",
-      bullets: ["Browser-based Monopoly clone written in vanilla JavaScript, which I built two weeks after writing my first ever line of code.", "Utilized vanilla Javascript in creating object oriented methods to iterate through each player's turn and added event listeners to the DOM to track user interaction.", "Leveraged Git for version control and deployed the web application to a remote server by installing and utilizing Surge.sh."]
+      bullets: ["Utilized vanilla Javascript in creating object oriented methods to iterate through each player's turn and added event listeners to the DOM to track user interaction.", "Leveraged Git for version control and deployed the web application to a remote server by installing and utilizing Surge.sh."]
       }
     ]
   })
@@ -150,6 +150,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* justify-content: center; */
 }
 .carousel{
   width: 91vw;
