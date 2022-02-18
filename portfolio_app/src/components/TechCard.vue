@@ -20,10 +20,10 @@ export default {
 
 <style scoped>
 .tech-logo{
-  width: 125px;
+  width: 100px;
 }
 .cont{
-    margin: 10px;
+    margin: 20px;
 }
 
 </style>

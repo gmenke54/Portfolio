@@ -21,7 +21,7 @@
     </template>
   </Carousel>
   <div class="brand">Full-stack software engineer with roots in STEM education and Medicine, I love to learn, think logistically, and am always building. My methodical thought process and craftsmanship allow me to plan and develop efficient, scaleable, and traceable back-end systems. </div>
-  <div>My Skills</div>
+  <!-- <div>My Skills</div> -->
   <div class="techs-cont">
     <div  v-for="tech in techs" :key="tech.id">
       <TechCard :tech="tech" />
@@ -113,7 +113,8 @@ export default {
       deployed: "https://myketopal.surge.sh/", 
       images: [dash, feed, profile],
       name: "MyKetoPal Nutrient Tracking Platform",
-      description: "Utilized PostgreSQL, Python, Django, and Vue.js to build a full stack mobile optimized application that tracks user nutrient consumption."
+      description: "Utilized PostgreSQL, Python, Django, and Vue.js to build a full stack mobile optimized application that tracks user nutrient consumption.",
+      bullets: ["Employed many-to-many and one-to-many relationships in Django to create an efficient and scalable back-end system.", "Setup a full CRUD Django REST framework and leveraged axios within the front-end to make API calls and access data.", "Integrated Django REST framework token based user authentication to enforce API authorization for CRUD functionality.", "Self-taught and implemented a centralized Vuex store for efficient and predictable global state management within Vue.js.", "Installed and integrated three separate Vue.js component libraries to receive user input and aesthetically render data on screen.", "Leveraged 2 external API’s to allow users to easily log food through a component that automatically queries a nutrient database.", "Managed and deployed two separate GitHub repositories making frequent commits throughout development of the application."]
       },
       {
       id: 2,
@@ -121,7 +122,8 @@ export default {
       deployed: "https://glacial-brook-94586.herokuapp.com/",
       images: [trade, search],
       name: "NBA Fantasy Basketball Trade Analyzer",
-      description: "Utilized MERN stack (MongoDB, Express, React, Node.js) to build a full stack application that efficiently tracks and analyzes live NBA stats."
+      description: "Utilized MERN stack (MongoDB, Express, React, Node.js) to build a full stack application that efficiently tracks and analyzes live NBA stats.",
+      bullets: ["Made RESTful API fetch calls to the back-end handling all create, read, update, delete (CRUD) operations.", "Configured React Router and utilized React state and hooks to develop an interactive application styled with flexbox layouts.", "Built out modular React components that organize user input with the use of a database of teams and players.", "Created a reusable search component that immediately queries multiple external API’s and live renders only current NBA players along with their up-to-date stats and pictures sorted by relevance."]
       },
       {
       id: 3,
@@ -129,7 +131,8 @@ export default {
       deployed: "https://grantopoly.surge.sh/",
       images: [monopoly, instruct, card],
       name: "Monopoly Game Clone",
-      description: "Browser-based Monopoly clone written in vanilla JavaScript, which I built two weeks after writing my first ever line of code."
+      description: "Browser-based Monopoly clone written in vanilla JavaScript, which I built two weeks after writing my first ever line of code.",
+      bullets: ["Browser-based Monopoly clone written in vanilla JavaScript, which I built two weeks after writing my first ever line of code.", "Utilized vanilla Javascript in creating object oriented methods to iterate through each player's turn and added event listeners to the DOM to track user interaction.", "Leveraged Git for version control and deployed the web application to a remote server by installing and utilizing Surge.sh."]
       }
     ]
   })

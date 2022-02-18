@@ -1,7 +1,16 @@
 <template>
   <div class="cont">
-    <img :src="project.images[0]" alt="Project Image">
-    <div class="project-name">{{project.name}}</div>
+    <div>
+      <div class="picture-cont">
+        <div class="project-name">{{project.name}}</div>
+        <img :src="project.images[0]" alt="Project Image">
+      </div>
+      <div class="bullets-cont">
+        <div v-for="bullet in project.bullets" :key="bullet.index">{{bullet}}</div>
+      </div>
+    </div>
+
+
     <div class="line"></div>
   </div>
   
