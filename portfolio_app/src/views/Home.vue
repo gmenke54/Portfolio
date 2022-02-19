@@ -28,7 +28,7 @@
     </div>
   </div>
 
-  <div>My Builds</div>
+  <!-- <div class="builds-title">My Builds</div> -->
   <div  v-for="project in projects" :key="project.id">
     <ProjectCard :project="project" />
   </div>
@@ -148,6 +148,11 @@ export default {
 </script>
 
 <style>
+.builds-title{
+    color: rgb(59, 59, 59);
+  font-weight: 700;
+  font-size: 4.5vw;
+}
 .techs-cont{
   display: flex;
   flex-direction: row;
@@ -230,5 +235,10 @@ img{
   margin-top: -20px;
   color: rgb(59, 59, 59);
   font-size: 20px;
+}
+.brand{
+  margin: 20px;
+  color: rgb(59, 59, 59);
+  font-size: 1.6vw;
 }
 </style>

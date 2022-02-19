@@ -1,7 +1,6 @@
 <template>
   <div class="cont">
-    <div class="line"></div>
-    <div class="flex-row">
+    <div class="flex-row" :class="reverse">
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
@@ -15,15 +14,17 @@
           </div>
         </div>
       </div>
-      <div>
+      <div class="info-card">
         <div class="project-name">{{project.name}}</div>
-        <div>{{project.title}}</div>
-        <div  v-for="tech in project.techs" :key="tech.index">
-          <img class="tech-logo" :src="tech" alt="Tech Logo">
+        <div class="project-title">{{project.title}}</div>
+        <div class="techs">
+          <div v-for="tech in project.techs" :key="tech.index">
+            <img class="tech-logo" :src="tech" alt="Tech Logo">
+          </div>
         </div>
       </div>
     </div>
-
+    <div class="line"></div>
   </div>
 </template>
 
@@ -38,20 +39,41 @@ export default {
    data:() => ({
 
    }),
+   computed: {
+     reverse(){
+       if (this.project.id%2 === 0){
+         return "row"
+       } else {
+         return "row-reverse"
+       }
+     }
+   }
 }
 </script>
 
 <style scoped>
+.info-card{
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.techs{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 23vw;
+  justify-content: center
+}
 .tech-logo{
-  width: 3vw;
-  margin: 0.1vw
+  width: 6vw;
+  margin: 0.5vw
 }
 .line{
   width: 80vw;
   border: 1px solid rgb(80, 80, 80);
   border-radius: 5px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin: 15px auto;
 }
 .bullets-cont{
   display: flex;
@@ -61,19 +83,27 @@ export default {
   width: 100%;
   font-size: 1vw;
   color: rgb(71, 71, 71)
-  /* width: 100%;
-  height: 100%;
-  background-color: white; */
 }
-/* img{
-  width: 50vw;
-} */
-
+.project-name{
+  color: rgb(59, 59, 59);
+  font-weight: 700;
+  font-size: 4.5vw;
+}
+.project-title{
+  margin-top: -0.8vw;
+  color: rgb(59, 59, 59);
+  font-size: 1.4vw;
+}
 .flex-row{
+  width: 100vw;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-
+.row-reverse{
+  flex-direction: row-reverse;
+}
 .flip-card {
   width: 45vw;
   perspective: 1000px;
