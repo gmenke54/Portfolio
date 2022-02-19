@@ -1,5 +1,5 @@
 <template>
-  <div class="cont">
+  <div class="cont" @click="this.goDeploy()">
     <div class="flex-row" :class="reverse">
       <div class="flip-card">
         <div class="flip-card-inner">
@@ -46,6 +46,11 @@ export default {
        } else {
          return "row-reverse"
        }
+     }
+   },
+   methods: {
+     goDeploy(){
+       window.open(this.project.deployed)
      }
    }
 }
