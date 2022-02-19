@@ -46,6 +46,7 @@ import search from '../assets/search.png'
 import trade from '../assets/trade.png'
 import instruct from '../assets/instruct.png'
 import card from '../assets/card.png'
+import stats from '../assets/stats.png'
 import TechCard from '../components/TechCard.vue'
 import ProjectCard from '../components/ProjectCard.vue'
 import js from '../assets/techs/javascript.png'
@@ -104,7 +105,8 @@ export default {
       { id: 3, url: profile },
       { id: 4, url: search },
       { id: 5, url: trade },
-      { id: 6, url: monopoly },
+      { id: 6, url: stats },
+      { id: 7, url: monopoly },
     ],
     projects: [
       {
@@ -112,27 +114,33 @@ export default {
       github: "https://github.com/gmenke54/My_Keto_Pal_Front_End", 
       deployed: "https://myketopal.surge.sh/", 
       images: [dash, feed, profile],
-      name: "MyKetoPal Nutrient Tracking Platform",
+      name: "MyKetoPal",
+      title: "Nutrient Tracking Platform",
       description: "Utilized PostgreSQL, Python, Django, and Vue.js to build a full stack mobile optimized application that tracks user nutrient consumption.",
-      bullets: ["Employed many-to-many and one-to-many relationships in Django to create an efficient and scalable back-end system.", "Setup a full CRUD Django REST framework and leveraged axios within the front-end to make API calls and access data.", "Integrated Django REST framework token based user authentication to enforce API authorization for CRUD functionality.", "Self-taught and implemented a centralized Vuex store for efficient and predictable global state management within Vue.js.", "Installed and integrated three separate Vue.js component libraries to receive user input and aesthetically render data on screen.", "Leveraged 2 external API’s to allow users to easily log food through a component that automatically queries a nutrient database.", "Managed and deployed two separate GitHub repositories making frequent commits throughout development of the application."]
+      bullets: ["Employed many-to-many and one-to-many relationships in Django to create an efficient and scalable back-end system.", "Setup a full CRUD Django REST framework and leveraged axios within the front-end to make API calls and access data.", "Integrated Django REST framework token based user authentication to enforce API authorization for CRUD functionality.", "Self-taught and implemented a centralized Vuex store for efficient and predictable global state management within Vue.js.", "Installed and integrated three separate Vue.js component libraries to receive user input and aesthetically render data on screen.", "Managed and deployed two separate GitHub repositories making frequent commits throughout development of the application."],
+      techs: [python, js, vue, django, vuex, chart]
       },
       {
       id: 2,
       github: "https://github.com/gmenke54/u2_project_FBB_Trade_Analyzer",
       deployed: "https://glacial-brook-94586.herokuapp.com/",
       images: [trade, search],
-      name: "NBA Fantasy Basketball Trade Analyzer",
+      name: "NBA Hub",
+      title: "Fantasy Basketball Trade Analyzer",
       description: "Utilized MERN stack (MongoDB, Express, React, Node.js) to build a full stack application that efficiently tracks and analyzes live NBA stats.",
-      bullets: ["Made RESTful API fetch calls to the back-end handling all create, read, update, delete (CRUD) operations.", "Configured React Router and utilized React state and hooks to develop an interactive application styled with flexbox layouts.", "Built out modular React components that organize user input with the use of a database of teams and players.", "Created a reusable search component that immediately queries multiple external API’s and live renders only current NBA players along with their up-to-date stats and pictures sorted by relevance."]
+      bullets: ["Made RESTful API fetch calls to the back-end handling all create, read, update, delete (CRUD) operations.", "Configured React Router and utilized React state and hooks to develop an interactive application styled with flexbox layouts.", "Built out modular React components that organize user input with the use of a database of teams and players.", "Created a reusable search component that immediately queries multiple external API’s and live renders only current NBA players along with their up-to-date stats and pictures sorted by relevance."],
+      techs: [js, react, node, express, mongoose, mongodb]
       },
       {
       id: 3,
       github: "https://github.com/gmenke54/u1_project_monopoly",
       deployed: "https://grantopoly.surge.sh/",
       images: [monopoly, instruct, card],
-      name: "Monopoly Game Clone",
+      name: "Grantopoly",
+      title: "Monopoly Game Clone",
       description: "Browser-based Monopoly clone written in vanilla JavaScript, which I built two weeks after writing my first ever line of code.",
-      bullets: ["Utilized vanilla Javascript in creating object oriented methods to iterate through each player's turn and added event listeners to the DOM to track user interaction.", "Leveraged Git for version control and deployed the web application to a remote server by installing and utilizing Surge.sh."]
+      bullets: ["Utilized vanilla Javascript in creating object oriented methods to iterate through each player's turn and added event listeners to the DOM to track user interaction.", "Deployed the web application to a remote server by installing and utilizing Surge.sh.", "Leveraged Git for version control."],
+      techs: [js, html, css, git, github]
       }
     ]
   })
