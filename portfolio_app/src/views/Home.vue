@@ -213,12 +213,12 @@ img{
 .carousel__prev,
 .carousel__next {
   box-sizing: content-box;
-  border: 5px solid white;
-  background-color: rgb(27, 57, 156);
+  border: 5px solid #F0F2F4;
+  background-color:  #3181CE;
 }
 :root {
-    --vc-clr-primary: rgb(27, 57, 156);
-    --vc-clr-secondary: rgb(152, 170, 218);
+    --vc-clr-primary: #3181CE;
+    --vc-clr-secondary: #3182ce49;
 }
 .prof{
   width: 17em;

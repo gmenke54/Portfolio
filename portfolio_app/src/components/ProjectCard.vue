@@ -83,7 +83,7 @@ export default {
 }
 .btn:hover{
   background-color: #F0F2F4;
-  border: 2.5px solid #338ee2;
+  border: 2.5px solid #3181CE;
   color: #383838;
 
 }
