@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+RewriteEngine on
+RewriteBase /
+RewriteRule ^(.+)\.html$ /$1 [R,L]
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*?)/?$ /$1.html [NC,END]
+# Return 404 if original request is .html
+RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.html[? ].*$"
+RewriteRule .* - [L,R=404]
