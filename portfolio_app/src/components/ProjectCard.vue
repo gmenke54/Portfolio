@@ -14,13 +14,17 @@
           </div>
         </div>
       </div>
-      <div class="info-card" @click="this.goDeploy()">
+      <div class="info-card">
         <div class="project-name">{{project.name}}</div>
         <div class="project-title">{{project.title}}</div>
         <div class="techs">
           <div v-for="tech in project.techs" :key="tech.index">
             <img class="tech-logo" :src="tech" alt="Tech Logo">
           </div>
+        </div>
+        <div class="btn-bar">
+          <div class="btn" @click="this.goGitHub()">GitHub</div>
+          <div class="btn" @click="this.goDeploy()">Deployed</div>
         </div>
       </div>
     </div>
@@ -51,29 +55,55 @@ export default {
    methods: {
      goDeploy(){
        window.open(this.project.deployed)
+     },
+     goGitHub(){
+       window.open(this.project.github)
      }
    }
 }
 </script>
 
 <style scoped>
+.btn-bar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+.btn{
+  border: 2.5px solid #242424;
+  font-size: clamp(8px, 0.9vw, 16px);
+  border-radius: 5px;
+  color: #464646;
+  cursor: pointer;
+  padding-top: clamp(2px, .4vw, 10px);
+  padding-bottom: clamp(2px, .4vw, 10px);
+  padding-right: clamp(12px, 2vw, 60px);
+  padding-left: clamp(12px, 2vw, 60px);
+}
+.btn:hover{
+  background-color: #F0F2F4;
+  border: 2.5px solid #338ee2;
+  color: #383838;
+
+}
 .info-card{
   /* width: 35vw; */
   margin: 0 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
+  cursor: default;
 }
 .techs{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: clamp(95px, 23vw, 390px);
+  width: clamp(110px, 23vw, 390px);
   justify-content: center
 }
 .tech-logo{
-  width: clamp(25px, 6vw, 100px);
+  width: clamp(30px, 6vw, 100px);
   margin: 0.5vw
 }
 .line{
