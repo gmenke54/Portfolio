@@ -1,37 +1,41 @@
 <template>
-  <div class="home">
-    <div class="img-cont">
-      <img alt="Profile Picture" class="prof" src="../assets/headshot.png">
-      <div class="word-cont">
-        <div class="name">Grant Menke</div>
-        <div class="title">Full Stack Software Engineer</div>
-        <!-- <div class="title">Full Stack React/Node Developer</div> -->
-      </div>
+  <div class ="flex-row">
+    <div class="side"></div>
+    <div class="home">
+      <div class="img-cont">
+        <img alt="Profile Picture" class="prof" src="../assets/headshot.png">
+        <div class="word-cont">
+          <div class="name">Grant Menke</div>
+          <div class="title">Full Stack Software Engineer</div>
+          <!-- <div class="title">Full Stack React/Node Developer</div> -->
+        </div>
 
-    </div>
-  <Carousel class="carousel" :autoplay="3000" :itemsToShow="3.95" :wrapAround="true">
-    <Slide v-for="image in this.images" :key="image.id">
-      <div class="carousel__item">
-      <img :src="image.url" />
       </div>
-    </Slide>
-    <template #addons>
-      <navigation />
-      <pagination />
-    </template>
-  </Carousel>
-  <div class="brand">Full-stack software engineer with roots in STEM education and Medicine, I love to learn, think logistically, and am always building. My methodical thought process and craftsmanship allow me to plan and develop efficient, scaleable, and traceable back-end systems. </div>
-  <!-- <div>My Skills</div> -->
-  <div class="techs-cont">
-    <div  v-for="tech in techs" :key="tech.id">
-      <TechCard :tech="tech" />
+    <Carousel class="carousel" :autoplay="3000" :itemsToShow="3.95" :wrapAround="true">
+      <Slide v-for="image in this.images" :key="image.id">
+        <div class="carousel__item">
+        <img :src="image.url" />
+        </div>
+      </Slide>
+      <template #addons>
+        <navigation />
+        <pagination />
+      </template>
+    </Carousel>
+    <div class="brand">Full-stack software engineer with roots in STEM education and Medicine, I love to learn, think logistically, and am always building. My methodical thought process and craftsmanship allow me to plan and develop efficient, scaleable, and traceable back-end systems. </div>
+    <!-- <div>My Skills</div> -->
+    <div class="techs-cont">
+      <div  v-for="tech in techs" :key="tech.id">
+        <TechCard :tech="tech" />
+      </div>
     </div>
-  </div>
 
-  <!-- <div class="builds-title">My Builds</div> -->
-  <div  v-for="project in projects" :key="project.id">
-    <ProjectCard :project="project" />
-  </div>
+    <!-- <div class="builds-title">My Builds</div> -->
+    <div  v-for="project in projects" :key="project.id">
+      <ProjectCard :project="project" />
+    </div>
+    </div>
+    <div class="side"></div>
   </div>
 </template>
 
@@ -148,8 +152,12 @@ export default {
 </script>
 
 <style>
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
 .builds-title{
-    color: rgb(59, 59, 59);
+  color: rgb(59, 59, 59);
   font-weight: 700;
   font-size: 4.5vw;
 }
@@ -163,15 +171,19 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 1398px;
   /* justify-content: center; */
 }
+.side{
+  width: 100%
+}
 .carousel{
-  width: 91vw;
+  width: 87vw;
   margin-top: 10px;
 }
 img{
   border-radius: 5px;
-  width: 45vw;
+  width: clamp(300px, 45vw, 1100px)
 }
 .carousel__slide > .carousel__item {
   transform: scale(1);
@@ -239,6 +251,6 @@ img{
 .brand{
   margin: 20px;
   color: rgb(59, 59, 59);
-  font-size: 1.6vw;
+  font-size: clamp(10px, 1.6vw, 22px);
 }
 </style>

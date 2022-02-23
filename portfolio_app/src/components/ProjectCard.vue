@@ -1,5 +1,5 @@
 <template>
-  <div class="cont" @click="this.goDeploy()">
+  <div class="cont">
     <div class="flex-row" :class="reverse">
       <div class="flip-card">
         <div class="flip-card-inner">
@@ -14,7 +14,7 @@
           </div>
         </div>
       </div>
-      <div class="info-card">
+      <div class="info-card" @click="this.goDeploy()">
         <div class="project-name">{{project.name}}</div>
         <div class="project-title">{{project.title}}</div>
         <div class="techs">
@@ -58,24 +58,26 @@ export default {
 
 <style scoped>
 .info-card{
-  width: 35vw;
+  /* width: 35vw; */
+  margin: 0 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 }
 .techs{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 23vw;
+  width: clamp(95px, 23vw, 390px);
   justify-content: center
 }
 .tech-logo{
-  width: 6vw;
+  width: clamp(25px, 6vw, 100px);
   margin: 0.5vw
 }
 .line{
-  width: 80vw;
+  width: 90%;
   border: 1px solid rgb(80, 80, 80);
   border-radius: 5px;
   margin: 15px auto;
@@ -86,21 +88,21 @@ export default {
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  font-size: 1vw;
+  font-size: clamp(8px, 1vw, 26px);
   color: rgb(71, 71, 71)
 }
 .project-name{
   color: rgb(59, 59, 59);
   font-weight: 700;
-  font-size: 4.5vw;
+  font-size: clamp(25px, 4.5vw, 80px)
 }
 .project-title{
-  margin-top: -0.8vw;
+  margin-top: clamp(-5px, -0.8vw, -12px) ;
   color: rgb(59, 59, 59);
-  font-size: 1.4vw;
+  font-size: clamp(9.5px, 1.4vw, 25px)
 }
 .flex-row{
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -110,11 +112,10 @@ export default {
   flex-direction: row-reverse;
 }
 .flip-card {
-  width: 45vw;
+  width: clamp(300px, 45vw, 1100px);
   perspective: 1000px;
-  height: 24.5vw;
+  height: clamp(150px, 24.5vw, 610px);
   margin: 10px auto;
-
 }
 
 .flip-card-inner {
@@ -153,9 +154,11 @@ export default {
   transform: rotateY(180deg);
   border-radius: 10px;
     padding: 10px;
+    cursor: default
 }
 .project-description{
-  font-size: 1.2vw;
+  /* font-size: 1.2vw; */
+  font-size: clamp(9px, 1.2vw, 31px);
   text-align: center
 }
 </style>

@@ -1,18 +1,15 @@
 <template>
     <div>
       <div class="about">
-        <div class="header">This is a carbohydrate-centric nutrient logging application written in Python, Django, and Vue.js</div>
+        <div class="header">This is browser-based application was built from scratch in Vue.js by:</div>
         <div class="our-about">
-          <div class="linkedin">
-            This full CRUD borwser-based application was built by:
-          </div>
           <div class="flex-col">
             <a class="linked-in-link" href="https://github.com/gmenke54">GitHub</a>
             <div class="nut">
             <img class="profile-image" @mouseover="this.show=true" @mouseleave="this.show=false" src="https://media-exp1.licdn.com/dms/image/C5603AQGmr5tzUwS9Kg/profile-displayphoto-shrink_800_800/0/1638995274513?e=1650499200&v=beta&t=DMG-0GKAop8i0H9rWH7e6fhIeDw1G2sZ2GT2XFbwUeo" @click="golinkedin" alt="profile image">
               <div v-if="show" class="about-name">Grant Menke</div>
             </div>
-            <a class="linked-in-link" href="http://grantmenke.com/">Portfolio</a>
+            <a class="linked-in-link" href="https://www.linkedin.com/in/grantmenke/">LinkedIn</a>
           </div>
         </div>
       </div>
