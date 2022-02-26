@@ -6,7 +6,7 @@
       <div class="img-cont">
         <img alt="Profile Picture" class="prof" src="../assets/headshot.png">
         <div class="word-cont">
-          <div class="name">Grant Menke</div>
+          <div class="name" >Grant Menke</div>
           <div class="title">Full Stack Software Engineer</div>
           <!-- <div class="title">Full Stack React/Node Developer</div> -->
         </div>
@@ -26,12 +26,12 @@
     <div class="brand">Full-stack software engineer with roots in STEM education and Medicine, I love to learn, think logistically, and am always building. My methodical thought process and craftsmanship allow me to plan and develop efficient, scaleable, and traceable back-end systems. </div>
     <div class="techs-cont">
       <div  v-for="tech in techs" :key="tech.id">
-        <TechCard :tech="tech" />
+        <TechCard :tech="tech" @click="goto(tech.goto)"/>
       </div>
     </div>
 
     <div  v-for="project in projects" :key="project.id">
-      <ProjectCard :project="project" />
+      <ProjectCard :project="project" :ref="project.ref" />
     </div>
     </div>
     <div class="side"></div>
@@ -93,28 +93,34 @@ export default {
       link.download = 'grantmenke_resume';
       link.click();
       URL.revokeObjectURL(link.href)
+    },
+    goto(refName) {
+      console.log(refName)
+        var element = this.$refs[refName];
+        var top = element.offsetTop;
+        window.scrollTo(0, top);
     }
   },
   data:() => ({
     techs: [
-      { id: 1, name: "JavaScript", url: js },
-      { id: 2, name: "Python", url: python },
-      { id: 3, name: "Node.js", url: node },
-      { id: 4, name: "Express.js", url: express },
-      { id: 5, name: "React", url: react },
-      { id: 6, name: "Vue.js", url: vue },
-      { id: 7, name: "Django", url: django },
-      { id: 8, name: "PostgreSQL", url: postgresql },
-      { id: 9, name: "Sequelize", url: sequelize },
-      { id: 10, name: "Mongoose", url: mongoose },
-      { id: 11, name: "MongoDB", url: mongodb },
-      { id: 12, name: "Redux", url: redux },
-      { id: 13, name: "Vuex", url: vuex },
-      { id: 14, name: "Chart.js", url: chart },
-      { id: 15, name: "Git", url: git },
-      { id: 16, name: "GitHub", url: github },
-      { id: 17, name: "HTML5", url: html },
-      { id: 18, name: "CSS3", url: css },
+      { id: 1, name: "JavaScript", url: js, goto: 'p4' },
+      { id: 2, name: "Python", url: python, goto: 'p4' },
+      { id: 3, name: "Node.js", url: node, goto: 'p2' },
+      { id: 4, name: "Express.js", url: express, goto: 'p2' },
+      { id: 5, name: "React", url: react, goto: 'p2' },
+      { id: 6, name: "Vue.js", url: vue, goto: 'p4' },
+      { id: 7, name: "Django", url: django, goto: 'p4' },
+      { id: 8, name: "PostgreSQL", url: postgresql, goto: 'p2' },
+      { id: 9, name: "Sequelize", url: sequelize, goto: 'p2' },
+      { id: 10, name: "Mongoose", url: mongoose, goto: 'p2' },
+      { id: 11, name: "MongoDB", url: mongodb, goto: 'p2' },
+      { id: 12, name: "Redux", url: redux, goto: 'p2' },
+      { id: 13, name: "Vuex", url: vuex, goto: 'p4' },
+      { id: 14, name: "Chart.js", url: chart, goto: 'p4' },
+      { id: 15, name: "Git", url: git, goto: 'p1' },
+      { id: 16, name: "GitHub", url: github, goto: 'p1' },
+      { id: 17, name: "HTML5", url: html, goto: 'p1' },
+      { id: 18, name: "CSS3", url: css, goto: 'p1' },
     ],
     images: [
       { id: 1, url: dash },
@@ -135,7 +141,8 @@ export default {
       title: "Nutrient Tracking Platform",
       description: "Utilized PostgreSQL, Python, Django, and Vue.js to build a full stack mobile optimized application that tracks user nutrient consumption.",
       bullets: ["Employed many-to-many and one-to-many relationships in Django to create an efficient and scalable back-end system.", "Setup a full CRUD Django REST framework and leveraged axios within the front-end to make API calls and access data.", "Integrated Django REST framework token based user authentication to enforce API authorization for CRUD functionality.", "Self-taught and implemented a centralized Vuex store for efficient and predictable global state management within Vue.js.", "Installed and integrated three separate Vue.js component libraries to receive user input and aesthetically render data on screen.", "Managed and deployed two separate GitHub repositories making frequent commits throughout development of the application."],
-      techs: [python, js, vue, django, vuex, chart]
+      techs: [python, js, vue, django, vuex, chart],
+      ref: "p4"
       },
       {
       id: 2,
@@ -146,7 +153,8 @@ export default {
       title: "Fantasy Basketball Trade Analyzer",
       description: "Utilized MERN stack (MongoDB, Express, React, Node.js) to build a full stack application that efficiently tracks and analyzes live NBA stats.",
       bullets: ["Made RESTful API fetch calls to the back-end handling all create, read, update, delete (CRUD) operations.", "Configured React Router and utilized React state and hooks to develop an interactive application styled with flexbox layouts.", "Built out modular React components that organize user input with the use of a database of teams and players.", "Created a reusable search component that immediately queries multiple external API’s and live renders only current NBA players along with their up-to-date stats and pictures sorted by relevance."],
-      techs: [js, react, node, express, mongoose, mongodb]
+      techs: [js, react, node, express, mongoose, mongodb],
+      ref: "p2"
       },
       {
       id: 3,
@@ -157,7 +165,8 @@ export default {
       title: "Monopoly Game Clone",
       description: "Browser-based Monopoly clone written in vanilla JavaScript, which I built two weeks after writing my first ever line of code.",
       bullets: ["Utilized vanilla Javascript in creating object oriented methods to iterate through each player's turn and added event listeners to the DOM to track user interaction.", "Deployed the web application to a remote server by installing and utilizing Surge.sh.", "Leveraged Git for version control."],
-      techs: [js, html, css, git, github]
+      techs: [js, html, css, git, github],
+      ref: "p1"
       }
     ]
   })
