@@ -1,5 +1,6 @@
 <template>
   <div class ="flex-row">
+    <div class="resume" @click="this.download()">Resume</div>
     <div class="side"></div>
     <div class="home">
       <div class="img-cont">
@@ -23,14 +24,12 @@
       </template>
     </Carousel>
     <div class="brand">Full-stack software engineer with roots in STEM education and Medicine, I love to learn, think logistically, and am always building. My methodical thought process and craftsmanship allow me to plan and develop efficient, scaleable, and traceable back-end systems. </div>
-    <!-- <div>My Skills</div> -->
     <div class="techs-cont">
       <div  v-for="tech in techs" :key="tech.id">
         <TechCard :tech="tech" />
       </div>
     </div>
 
-    <!-- <div class="builds-title">My Builds</div> -->
     <div  v-for="project in projects" :key="project.id">
       <ProjectCard :project="project" />
     </div>
@@ -72,6 +71,9 @@ import vue from '../assets/techs/vue.png'
 import vuex from '../assets/techs/vuex.png'
 import chart from '../assets/techs/chart.png'
 
+import axios from 'axios';
+import grantmenke from '../assets/grantmenke.png'
+
 export default {
   name: 'Home',
   components: {
@@ -81,6 +83,17 @@ export default {
     Navigation,
     TechCard,
     ProjectCard
+  },
+  methods:{
+    async download(){
+      const result = await axios.get(grantmenke, {responseType: 'blob' });
+      const blob = new Blob([result.data], { type: 'image/png' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'grantmenke_resume';
+      link.click();
+      URL.revokeObjectURL(link.href)
+    }
   },
   data:() => ({
     techs: [
@@ -152,6 +165,21 @@ export default {
 </script>
 
 <style>
+.resume{
+  position: fixed;
+  right: 12px;
+  cursor: pointer;
+  background-color: #3181CE;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 3;
+}
+.resume:hover{
+  background-color: #4b97dd;
+}
 .flex-row{
   display: flex;
   flex-direction: row;
