@@ -31,7 +31,9 @@
     </div>
 
     <div  v-for="project in projects" :key="project.id">
-      <ProjectCard :project="project" :ref="project.ref" />
+      <div :ref="project.ref">
+        <ProjectCard :project="project" /> 
+      </div>
     </div>
     </div>
     <div class="side"></div>
@@ -97,8 +99,15 @@ export default {
     goto(refName) {
       console.log(refName)
         var element = this.$refs[refName];
-        var top = element.offsetTop;
-        window.scrollTo(0, top);
+        console.log(element[0].offsetTop)
+        var top = element[0].offsetTop;
+        console.log(top)
+        // window.scrollTo(0, top);
+        window.scrollTo({
+  top: top,
+  left: 0,
+  behavior: 'smooth'
+})
     }
   },
   data:() => ({
