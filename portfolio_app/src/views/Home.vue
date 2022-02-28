@@ -183,6 +183,9 @@ export default {
 </script>
 
 <style>
+.carousel__item{
+  cursor: pointer;
+}
 .resume{
   position: fixed;
   right: 12px;

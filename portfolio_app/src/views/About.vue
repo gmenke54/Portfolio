@@ -13,6 +13,10 @@
           </div>
         </div>
       </div>
+      <div>
+        <div class="header">Resume</div>
+        <img @click=this.download() class="resume-img" src="../assets/grantmenke.png" alt="">
+      </div>
       <div class="credits">
         <div class="resources">Resources</div>
         <div class="links">
@@ -67,7 +71,8 @@
 </template>
 
 <script>
-
+import axios from 'axios';
+import grantmenke from '../assets/grantmenke.png'
 export default {
   name: 'About',
   data: ()=>({
@@ -76,7 +81,16 @@ export default {
   methods: {
     golinkedin(){
       window.open('https://www.linkedin.com/in/grantmenke/')
-    }
+    },
+   async download(){
+      const result = await axios.get(grantmenke, {responseType: 'blob' });
+      const blob = new Blob([result.data], { type: 'image/png' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'grantmenke_resume';
+      link.click();
+      URL.revokeObjectURL(link.href)
+    },
   }
 
 }
@@ -84,6 +98,10 @@ export default {
 
 
 <style scoped>
+.resume-img{
+  border-radius: 5px;
+  width: clamp(400px, 95vw, 650px)
+}
 .nut{
     position: relative;
   display: flex;

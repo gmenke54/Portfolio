@@ -21,6 +21,7 @@ export default {
 <style scoped>
 .tech-logo{
   width: 100px;
+  cursor: pointer;
 }
 .cont{
     margin: 20px;
