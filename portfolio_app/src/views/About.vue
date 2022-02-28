@@ -103,7 +103,7 @@ export default {
   width: clamp(400px, 95vw, 650px)
 }
 .nut{
-    position: relative;
+  position: relative;
   display: flex;
   justify-content: center;
 }

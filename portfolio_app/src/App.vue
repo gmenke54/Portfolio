@@ -3,13 +3,44 @@
     <div class="nav">
       <router-link to="/">GrantMenke.com</router-link>
       <router-link to="/about">About</router-link>
+       <Toggle v-model="value" class="toggle-blue" offLabel="☀️" onLabel="🌙" @change="this.toggle()"/>
     </div>
     <router-view/>
   </div>
 
 </template>
 
+<script>
+import Toggle from '@vueform/toggle'
+export default {
+  name: 'App',
+  data: ()=>({
+    value: null
+  }),
+  components: {
+    Toggle
+  },
+  methods: {
+    toggle(){
+      if (this.$store.state.mode==='light'){
+        this.$store.commit('setMode', 'dark')
+      } else {
+        this.$store.commit('setMode', 'light')
+      }
+    }
+  }
+}
+</script>
+
+
 <style lang="scss">
+.toggle-blue {
+  --toggle-bg-on: #3181CE;
+  --toggle-ring-color: none;
+  --toggle-border-on:#3181CE;
+  --toggle-width: 3rem;
+  margin-top: 9px;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -53,3 +84,5 @@ a:hover, .a:hover {
 }
 
 </style>
+
+<style src="@vueform/toggle/themes/default.css"></style>
