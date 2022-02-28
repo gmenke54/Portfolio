@@ -14,7 +14,7 @@
       </div>
     <Carousel class="carousel" :autoplay="3000" :itemsToShow="3.95" :wrapAround="true">
       <Slide v-for="image in this.images" :key="image.id">
-        <div class="carousel__item">
+        <div @click="goto(image.goto)" class="carousel__item">
         <img :src="image.url" />
         </div>
       </Slide>
@@ -132,13 +132,13 @@ export default {
       { id: 18, name: "CSS3", url: css, goto: 'p1' },
     ],
     images: [
-      { id: 1, url: dash },
-      { id: 2, url: feed },
-      { id: 3, url: profile },
-      { id: 4, url: search },
-      { id: 5, url: trade },
-      { id: 6, url: stats },
-      { id: 7, url: monopoly },
+      { id: 1, url: dash, goto: 'p4' },
+      { id: 2, url: feed, goto: 'p4' },
+      { id: 3, url: profile, goto: 'p4' },
+      { id: 4, url: search, goto: 'p2' },
+      { id: 5, url: trade, goto: 'p2' },
+      { id: 6, url: stats, goto: 'p2' },
+      { id: 7, url: monopoly, goto: 'p1' },
     ],
     projects: [
       {
