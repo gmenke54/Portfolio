@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="nav">
+  <div :class="this.$store.state.mode">
+    <div class="nav" :class="this.$store.state.mode">
       <router-link to="/">GrantMenke.com</router-link>
       <router-link to="/about">About</router-link>
        <Toggle v-model="value" class="toggle-blue" offLabel="☀️" onLabel="🌙" @change="this.toggle()"/>
@@ -63,7 +63,7 @@ a, .a{
   cursor: pointer;
   border-radius: 5px;
   padding: 8px 12px;
-  background-color: white;
+  // background-color: white;
 }
 
 a:hover, .a:hover {
@@ -82,7 +82,10 @@ a:hover, .a:hover {
   border-bottom: 0.5px solid #E7E9EB;
   margin-bottom: 10px;
 }
-
+.dark{
+  background-color: #121212;
+  border: #2c3e50;
+}
 </style>
 
 <style src="@vueform/toggle/themes/default.css"></style>

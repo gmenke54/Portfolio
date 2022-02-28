@@ -302,4 +302,5 @@ img{
   color: rgb(59, 59, 59);
   font-size: clamp(10px, 1.6vw, 22px);
 }
+
 </style>

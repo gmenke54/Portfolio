@@ -116,7 +116,8 @@ export default {
   font-size: 2.4vw
 }
 a{
-  font-weight: 600
+  font-weight: 600;
+  background-color: white;
 }
 .header{
   font-size: 20px;
