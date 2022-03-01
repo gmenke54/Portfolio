@@ -52,6 +52,7 @@ import trade from '../assets/trade.png'
 import instruct from '../assets/instruct.png'
 import card from '../assets/card.png'
 import stats from '../assets/stats.png'
+import books from '../assets/books.png'
 import TechCard from '../components/TechCard.vue'
 import ProjectCard from '../components/ProjectCard.vue'
 import js from '../assets/techs/javascript.png'
@@ -119,11 +120,11 @@ export default {
       { id: 5, name: "React", url: react, goto: 'p2' },
       { id: 6, name: "Vue.js", url: vue, goto: 'p4' },
       { id: 7, name: "Django", url: django, goto: 'p4' },
-      { id: 8, name: "PostgreSQL", url: postgresql, goto: 'p2' },
-      { id: 9, name: "Sequelize", url: sequelize, goto: 'p2' },
+      { id: 8, name: "PostgreSQL", url: postgresql, goto: 'p3' },
+      { id: 9, name: "Sequelize", url: sequelize, goto: 'p3' },
       { id: 10, name: "Mongoose", url: mongoose, goto: 'p2' },
       { id: 11, name: "MongoDB", url: mongodb, goto: 'p2' },
-      { id: 12, name: "Redux", url: redux, goto: 'p2' },
+      { id: 12, name: "Redux", url: redux, goto: 'p3' },
       { id: 13, name: "Vuex", url: vuex, goto: 'p4' },
       { id: 14, name: "Chart.js", url: chart, goto: 'p4' },
       { id: 15, name: "Git", url: git, goto: 'p1' },
@@ -138,7 +139,8 @@ export default {
       { id: 4, url: search, goto: 'p2' },
       { id: 5, url: trade, goto: 'p2' },
       { id: 6, url: stats, goto: 'p2' },
-      { id: 7, url: monopoly, goto: 'p1' },
+      { id: 7, url: books, goto: 'p3' },
+      { id: 8, url: monopoly, goto: 'p1' },
     ],
     projects: [
       {
@@ -156,7 +158,7 @@ export default {
       {
       id: 2,
       github: "https://github.com/gmenke54/u2_project_FBB_Trade_Analyzer",
-      deployed: "https://glacial-brook-94586.herokuapp.com/",
+      deployed: "https://nba-hub.herokuapp.com/",
       images: [trade, search],
       name: "NBA Hub",
       title: "Fantasy Basketball Trade Analyzer",
@@ -167,6 +169,18 @@ export default {
       },
       {
       id: 3,
+      github: "https://github.com/gmenke54/GreatReads",
+      deployed: "https://greatreadz.herokuapp.com/",
+      images: [books],
+      name: "GreatReads",
+      title: "Book Reccomendation Platform",
+      description: "Utilized PERN stack (PostgreSQL, Express, React, Node.js) with a team of 4 to collaboratively build a full stack application that tracks and stores users' favorite books and reviews of those books.",
+      bullets: ["Implemented user authentication leveraging JSON web tokens to enforce API authorization.", "Integrated React Redux on the front-end to store global data as a single source of truth.", "Queried the Google Books API to allow users to save books (and 15 associated data points) to their account page quickly.", "Employed Git version control and cohesive group git practices to co-develop this project simultaneously with my peers.", "Leveraged Heroku to initialize and deploy the in production database and front-end web application."],
+      techs: [postgresql, sequelize, redux, react, express, node],
+      ref: "p3"
+      },
+      {
+      id: 4,
       github: "https://github.com/gmenke54/u1_project_monopoly",
       deployed: "https://grantopoly.surge.sh/",
       images: [monopoly, instruct, card],
