@@ -10,7 +10,6 @@
           <div class="title">Full Stack Software Engineer</div>
           <!-- <div class="title">Full Stack React/Node Developer</div> -->
         </div>
-
       </div>
     <Carousel class="carousel" :autoplay="3000" :itemsToShow="3.95" :wrapAround="true">
       <Slide v-for="image in this.images" :key="image.id">
