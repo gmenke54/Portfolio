@@ -48,6 +48,7 @@ export default {
   text-align: center;
   background-color: #F0F2F4;
   min-height: 100vh;
+  min-width:100%
 }
 
 body{
