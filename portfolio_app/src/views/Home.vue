@@ -244,7 +244,7 @@ export default {
 }
 img{
   border-radius: 5px;
-  width: clamp(240px, 45vw, 1100px)
+  width: clamp(400px, 45vw, 1100px)
 }
 .carousel__slide > .carousel__item {
   transform: scale(1);

@@ -1,19 +1,6 @@
 <template>
   <div class="cont">
     <div class="flex-row" :class="reverse">
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img :src="project.images[0]" alt="Project Image">
-            <div class="flip-card-back">
-              <div class="project-description">{{project.description}}</div>
-              <div class="bullets-cont">
-                <div class="bullet" v-for="bullet in project.bullets" :key="bullet.index">-{{bullet}}</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="info-card">
         <div class="project-name">{{project.name}}</div>
         <div class="project-title">{{project.title}}</div>
@@ -25,6 +12,19 @@
         <div class="btn-bar">
           <div class="btn" @click="this.goGitHub()">GitHub</div>
           <div class="btn" @click="this.goDeploy()">Deployed</div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img :src="project.images[0]" alt="Project Image">
+            <div class="flip-card-back">
+              <div class="project-description">{{project.description}}</div>
+              <div class="bullets-cont">
+                <div class="bullet" v-for="bullet in project.bullets" :key="bullet.index">-{{bullet}}</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -88,7 +88,9 @@ export default {
 
 }
 .info-card{
-  margin: 2vw;
+  margin: 1vw;
+  /* margin-right: 2vw;
+  margin-left: 2vw; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -109,7 +111,7 @@ export default {
   width: 90%;
   border: 1px solid rgb(80, 80, 80);
   border-radius: 5px;
-  margin: 15px auto;
+  margin: 3vw auto;
 }
 .bullets-cont{
   display: flex;
@@ -117,7 +119,7 @@ export default {
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  font-size: clamp(8px, 1vw, 26px);
+  font-size: clamp(9.4px, 1vw, 26px);
   color: rgb(71, 71, 71);
   margin-top: 1vw;
 }
@@ -133,11 +135,12 @@ export default {
 }
 .flex-row{
   width: 98vw;
-  max-width: 1398px;
+  max-width: 1680px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap
 }
 .row-reverse{
   flex-direction: row-reverse;
@@ -145,8 +148,8 @@ export default {
 .flip-card-front{
   overflow: hidden;
   border-radius: 10px;
-  width: clamp(240px, 45vw, 1100px); 
-  height: clamp(120px, 24.5vw, 610px);
+  width: clamp(400px, 45vw, 1100px); 
+  height: clamp(225px, 24.5vw, 610px);
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 .flip-card-back{
@@ -215,7 +218,7 @@ export default {
     cursor: default
 } */
 .project-description{
-  font-size: clamp(9px, 1.2vw, 31px);
+  font-size: clamp(11px, 1.2vw, 31px);
   text-align: center
 }
 </style>
