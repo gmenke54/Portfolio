@@ -87,7 +87,6 @@ export default {
   },
   methods:{
     async download(){
-      console.log(`${window.location.origin}/grantmenke.docx`)
       const result = await axios.get(`${window.location.origin}/grantmenke.docx`, { responseType: 'blob' });
       const blob = new Blob([result.data], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
       const link = document.createElement('a');
