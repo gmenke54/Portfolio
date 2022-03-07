@@ -74,7 +74,6 @@ import vuex from '../assets/techs/vuex.png'
 import chart from '../assets/techs/chart.png'
 
 import axios from 'axios';
-import grantmenke from '../assets/grantmenke.png'
 
 export default {
   name: 'Home',
@@ -88,13 +87,14 @@ export default {
   },
   methods:{
     async download(){
-      const result = await axios.get(grantmenke, {responseType: 'blob' });
-      const blob = new Blob([result.data], { type: 'image/png' });
+      console.log(`${window.location.origin}/grantmenke.docx`)
+      const result = await axios.get(`${window.location.origin}/grantmenke.docx`, { responseType: 'blob' });
+      const blob = new Blob([result.data], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
       const link = document.createElement('a');
       link.href = URL.createObjectURL(blob);
       link.download = 'grantmenke_resume';
       link.click();
-      URL.revokeObjectURL(link.href)
+      URL.revokeObjectURL(link.href);
     },
     goto(refName) {
       console.log(refName)
@@ -104,10 +104,10 @@ export default {
         console.log(top)
         // window.scrollTo(0, top);
         window.scrollTo({
-  top: top,
-  left: 0,
-  behavior: 'smooth'
-})
+        top: top,
+        left: 0,
+        behavior: 'smooth'
+    })
     }
   },
   data:() => ({
