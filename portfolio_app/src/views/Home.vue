@@ -74,7 +74,6 @@ import vuex from '../assets/techs/vuex.png'
 import chart from '../assets/techs/chart.png'
 
 import axios from 'axios';
-import grantmenke from '../assets/grantmenke.png'
 
 export default {
   name: 'Home',
@@ -88,13 +87,13 @@ export default {
   },
   methods:{
     async download(){
-      const result = await axios.get(grantmenke, {responseType: 'blob' });
-      const blob = new Blob([result.data], { type: 'image/png' });
+      const result = await axios.get(`${window.location.origin}/grantmenke.docx`, { responseType: 'blob' });
+      const blob = new Blob([result.data], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
       const link = document.createElement('a');
       link.href = URL.createObjectURL(blob);
       link.download = 'grantmenke_resume';
       link.click();
-      URL.revokeObjectURL(link.href)
+      URL.revokeObjectURL(link.href);
     },
     goto(refName) {
       console.log(refName)
@@ -104,10 +103,10 @@ export default {
         console.log(top)
         // window.scrollTo(0, top);
         window.scrollTo({
-  top: top,
-  left: 0,
-  behavior: 'smooth'
-})
+        top: top,
+        left: 0,
+        behavior: 'smooth'
+    })
     }
   },
   data:() => ({
@@ -209,7 +208,7 @@ export default {
   font-weight: 500;
   padding: 10px;
   border-radius: 5px;
-  z-index: 3;
+  z-index: 6;
 }
 .resume:hover{
   background-color: #4b97dd;
@@ -245,7 +244,7 @@ export default {
 }
 img{
   border-radius: 5px;
-  width: clamp(300px, 45vw, 1100px)
+  width: clamp(400px, 45vw, 1100px)
 }
 .carousel__slide > .carousel__item {
   transform: scale(1);
@@ -283,7 +282,7 @@ img{
     --vc-clr-secondary: #3182ce49;
 }
 .prof{
-  width: 17em;
+  width: 15em;
   border-radius: 50% 30% 0 50%
 }
 .img-cont{
@@ -296,7 +295,7 @@ img{
   color: rgb(59, 59, 59);
   top: 43.5%;
   font-weight: 700;
-  font-size: 75px;
+  font-size: clamp(35px, 6vw, 75px);
 }
 .word-cont{
   margin-bottom: 50px;
@@ -306,9 +305,10 @@ img{
   margin-left: -70px;
 }
 .title{
-  margin-top: -20px;
+  /* margin-top: clamp(-2px, -1.5vw, -10px ); */
+  margin-top: clamp(-20px,-1.5vw, -1px);
   color: rgb(59, 59, 59);
-  font-size: 20px;
+  font-size:  clamp(12px, 1.6vw, 22px);
 }
 .brand{
   margin: 20px;

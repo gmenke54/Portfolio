@@ -20,11 +20,14 @@ export default {
 
 <style scoped>
 .tech-logo{
-  width: 100px;
+  width: clamp(30px, 6vw, 100px);
   cursor: pointer;
 }
+.tech-name{
+  font-size: clamp(9px, 1.2vw, 18px)
+}
 .cont{
-    margin: 20px;
+    margin: clamp(2px, 1.2vw, 25px)
 }
 
 </style>
